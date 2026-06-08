@@ -1,0 +1,45 @@
+BasedOnStyle: WebKit
+Language: Cpp
+Standard: Cpp03
+IndentWidth: 4
+TabWidth: 4
+UseTab: ForIndentation
+ContinuationIndentWidth: 8
+BreakBeforeBraces: Attach
+AllowShortIfStatementsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+ColumnLimit: 100
+PointerAlignment: Left
+ReferenceAlignment: Left
+AlignAfterOpenBracket: Align
+BinPackArguments: false
+BinPackParameters: false
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false
+SpacesInAngles: false
+SpacesInContainerLiterals: false
+SpacesInCStyleCastParentheses: false
+SpaceBeforeAssignmentOperators: true
+SortIncludes: true
+
+# インクルード順
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^"pch\.h"$'
+    Priority: -2
+  - Regex: '^"[a-z0-9_]*\.h"$'
+    Priority: -1
+  - Regex: '^"[a-z0-9_\/]*\.h"$'
+    Priority: 0
+  - Regex: '^<[wW]indows\.h>$'
+    Priority: 1
+  - Regex: '^<gdiplus\.h>$'
+    Priority: 1
+  - Regex: '^<[a-z0-9_]*\.h>$'
+    Priority: 3
+  - Regex: '^<[a-z0-9_\/]*\.h>$'
+    Priority: 4
+  - Regex: '^<[a-z0-9_\/]*>$' # C++ standard library
+    Priority: 5
